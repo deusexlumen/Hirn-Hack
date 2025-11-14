@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCI: Die Infrastruktur der Kontrolle</title>
+
+    <!-- NEU: Meta-Tags für SEO & Social Media -->
+    <meta name="description" content="Die PR-Story vom 'Heilversprechen' ist eine Lüge. Entdecken Sie die wahre Agenda hinter BCI: Die Triangulation der totalen psychologischen Kontrolle.">
+    <meta name="keywords" content="BCI, Brain-Computer Interface, Neurotechnologie, Kontrolle, Überwachung, Neuro-Rechte, kognitive Freiheit, DARPA, Neuralink, Cyberpunk">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BCI: Die Infrastruktur der Kontrolle">
+    <meta property="og:description" content="Das Heilversprechen ist die PR-Story. Die wahre Entwicklung ist eine Infrastruktur der totalen Kontrolle.">
+    <meta property="og:image" content="https://placehold.co/1200x630/030712/ef4444?text=THE+MIND+IS+NO+LONGER+YOURS">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="BCI: Die Infrastruktur der Kontrolle">
+    <meta property="twitter:description" content="Das Heilversprechen ist die PR-Story. Die wahre Entwicklung ist eine Infrastruktur der totalen Kontrolle.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/030712/ef4444?text=THE+MIND+IS+NO+LONGER+YOURS">
+
+    <!-- NEU: Theme Color & Favicon (Warnsymbol) -->
+    <meta name="theme-color" content="#030712">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 90,90 10,90' fill='%23ef4444'/><text x='44' y='75' font-size='50' fill='%23030712'>!</text></svg>">
+
+    <!-- Lade Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lade Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basis-Styling mit Inter-Schriftart */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712; /* Dunklerer Hintergrund */
+            color: #f3f4f6; /* Hellerer Text */
+            overflow-x: hidden; /* Verhindert horizontales Scrollen durch Glitch */
+        }
+
+        /* Scroll-Padding für sticky Header */
+        html {
+            scroll-padding-top: 60px; /* Höhe der Navbar angepasst */
+        }
+        
+        /* NEU: Überarbeitete Nav-Link-Stile */
+        .nav-link {
+            padding: 0.25rem 1rem; /* py-1 px-4 */
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600; /* semibold */
+            border: 2px solid transparent; /* Platzhalter für aktiven Rand */
+        }
+        .nav-link:hover {
+            background-color: #374151; /* bg-gray-700 */
+            color: #ffffff;
+        }
+        .nav-link.active {
+            color: #ef4444; /* Helleres Rot */
+            font-weight: 700;
+            background-color: #1f2937; /* bg-gray-800 */
+            border-color: #ef4444; /* Roter Rand */
+        }
+
+        /* Neon-Text-Schatten für Headlines */
+        .neon-text {
+            text-shadow: 0 0 5px rgba(239, 68, 68, 0.5), 0 0 10px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Sanfter Hover-Effekt für Karten */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.1), 0 4px 6px -4px rgba(239, 68, 68, 0.1);
+            /* NEU: Roter Rand-Hover */
+            border-color: #ef4444;
+        }
+
+        /* --- Glitch-Effekt für Hero-Headline --- */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch span {
+            display: inline-block;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #030712;
+            overflow: hidden;
+            clip-path: inset(50% 50% 50% 50%);
+        }
+        .glitch::before {
+            left: -2px;
+            text-shadow: -2px 0 #ef4444;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: 2px;
+            text-shadow: -2px 0 #3b82f6;
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim-1 {
+            0% { clip-path: inset(40% 0 60% 0); }
+            20% { clip-path: inset(10% 0 85% 0); }
+            40% { clip-path: inset(55% 0 20% 0); }
+            60% { clip-path: inset(30% 0 70% 0); }
+            80% { clip-path: inset(80% 0 5% 0); }
+            100% { clip-path: inset(45% 0 50% 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(65% 0 30% 0); }
+            20% { clip-path: inset(40% 0 55% 0); }
+            40% { clip-path: inset(70% 0 10% 0); }
+            60% { clip-path: inset(85% 0 5% 0); }
+            80% { clip-path: inset(35% 0 60% 0); }
+            100% { clip-path: inset(55% 0 40% 0); }
+        }
+        /* --- Ende Glitch-Effekt --- */
+
+        /* Styling für HTML5 Medien-Player */
+        video, audio {
+            border: 2px solid #374151;
+            border-radius: 0.5rem;
+            background-color: #111827;
+        }
+
+        /* Styling für die neue "Agenda"-Sektion */
+        .agenda-card {
+            background-color: #1f2937; /* Etwas heller als bg-gray-800 */
+            border: 2px solid #374151;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-200">
+
+    <!-- Sticky Navigationsleiste -->
+    <header class="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-md shadow-lg border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-xl font-black uppercase text-red-500 neon-text">
+                <a href="#home">Die <span class="text-gray-200">Kontrolle</span></a>
+            </div>
+            <div class="hidden md:flex space-x-2"> <!-- Space reduziert für Button-Stil -->
+                <a href="#tech" class="nav-link text-gray-300">1. Technik</a>
+                <a href="#actors" class="nav-link text-gray-300">2. Akteure</a>
+                <a href="#agenda" class="nav-link text-gray-300">Agenda</a>
+                <a href="#media" class="nav-link text-gray-300">Handbuch</a>
+                <a href="#law" class="nav-link text-gray-300">3. Lücke</a>
+                <a href="#action" class="nav-link text-gray-300">4. Widerstand</a>
+                <a href="#fazit" class="nav-link text-gray-300">Fazit</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <!-- KORRIGIERT: Fehlenden Mobile Menu Button hinzugefügt -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 border-t border-gray-800">
+            <a href="#tech" class="nav-link block text-gray-300">1. Technik</a>
+            <a href="#actors" class="nav-link block text-gray-300">2. Akteure</a>
+            <a href="#agenda" class="nav-link block text-gray-300">Agenda</a>
+            <a href="#media" class="nav-link block text-gray-300">Handbuch</a>
+            <a href="#law" class="nav-link block text-gray-300">3. Lücke</a>
+            <a href="#action" class="nav-link block text-gray-300">4. Widerstand</a>
+            <a href="#fazit" class="nav-link block text-gray-300">Fazit</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sektion 0: Hero -->
+        <section id="home" class="h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 1)), url('https://placehold.co/1920x1080/030712/991b1b?text=WAKE+UP');">
+            <div class="px-6">
+                <h1 class="text-4xl md:text-7xl font-black uppercase text-white neon-text glitch" data-text="Willkommen in der Realität.">
+                    <span>Willkommen in der Realität.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto">
+                    Das Heilversprechen von Brain-Computer Interfaces (BCI) ist nur die PR-Story.
+                    Die wahre Entwicklung ist eine Infrastruktur der totalen Kontrolle.
+                </p>
+                <!-- VERBESSERT: Button-Text -->
+                <a href="#tech" class="mt-10 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-xl text-lg transition duration-300 transform hover:scale-105">
+                    Betritt den Kaninchenbau
+                </a>
+            </div>
+        </section>
+
+        <!-- Sektion 1: Die Technik -->
+        <section id="tech" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-black text-center text-red-500 uppercase neon-text">Schritt 1: Die Waffe ist einsatzbereit</h2>
+                <p class="text-center text-xl text-gray-300 mt-4 max-w-2xl mx-auto">Die alten Mythen, die Technologie sei unzuverlässig und nicht skalierbar, sind überholt.</p>
+                
+                <div class="mt-16 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <!-- Stat Block -->
+                    <div class="p-8 bg-gray-900 border border-gray-800 rounded-lg shadow-lg text-center">
+                        <span class="text-5xl md:text-6xl font-black text-red-500 neon-text">96,40%</span>
+                        <h3 class="text-2xl font-bold text-white mt-4">Genauigkeit</h3>
+                        <p class="mt-3 text-lg text-gray-300">
+                            KI-Modelle dekodieren bereits heute komplexe mentale Zustände (fokussiert, müde) mit dieser Präzision. Das ist die technische Grundlage für "Neurosurveillance" am Arbeitsplatz.
+                        </p>
+                        <p class="mt-4 text-gray-400 text-sm">Quelle: Studie zur Klassifizierung mentaler Zustände, 2019</p>
+                    </div>
+
+                    <!-- Mythos 2 -->
+                    <div class="p-8 bg-gray-900 border border-gray-800 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-400 line-through">Mythos: "Jedes Gehirn ist einzigartig"</h3>
+                        <p class="mt-3 text-lg text-white">
+                            <span class="font-bold text-red-400 text-xl">Realität:</span> Durch "Transfer Learning" muss die KI nicht mehr für jeden Nutzer stundenlang neu trainieren. Das Ziel sind "kalibrierungsfreie" Modelle für den Massenmarkt.
+                        </p>
+                        <p class="mt-4 text-lg text-white">
+                            Metas "Brain2Qwerty" übersetzt bereits Sätze aus nicht-invasiven EEG-Signalen. Ein Betriebssystem für Ihren Schädel rückt näher.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 2: Die Akteure -->
+        <section id="actors" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-black text-center text-red-500 uppercase neon-text">Schritt 2: Die Kunden stehen Schlange</h2>
+                <p class="text-center text-xl text-gray-300 mt-4 max-w-2xl mx-auto">Die Technologie wird nicht zufällig entwickelt. Mächtige Akteure haben klare, nicht-therapeutische Ziele.</p>
+                
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Akteur 1: Militär -->
+                    <div class="card-hover bg-gray-900 border-2 border-gray-800 rounded-lg p-6 text-center">
+                        <!-- NEUES Icon -->
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-16 h-16 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" clip-rule="evenodd" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" clip-rule="evenodd" transform="translate(-15.91 -11.672) scale(1.5) translate(10.606 7.781)" /> <!-- Skaliert und verschoben für Fadenkreuz-Effekt -->
+                                <circle cx="12" cy="12" r="3" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Das Militär (DARPA)</h3>
+                        <p class="mt-3 text-lg text-gray-300">
+                            Ziel: "Dual-Use". Steuerung von Drohnenschwärmen, "synthetische Telepathie" für Soldaten. Die Waffe wird für gesunde Anwender entwickelt.
+                        </p>
+                    </div>
+
+                    <!-- Akteur 2: Big Tech -->
+                    <div class="card-hover bg-gray-900 border-2 border-gray-800 rounded-lg p-6 text-center">
+                        <!-- NEUES Icon -->
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-16 h-16 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Big Tech (Meta, Apple)</h3>
+                        <p class="mt-3 text-lg text-gray-300">
+                            Ziel: Kommerzialisierung. Dein Schädel als Marktplatz. Datensammlung für Neuromarketing und AR/VR-Steuerung. Die nächste Stufe der Interaktion.
+                        </p>
+                    </div>
+
+                    <!-- Akteur 3: Konzerne -->
+                    <div class="card-hover bg-gray-900 border-2 border-gray-800 rounded-lg p-6 text-center">
+                        <!-- NEUES Icon -->
+                        <div class="flex justify-center mb-4">
+                            <svg class="w-16 h-16 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21v-4.5m0 4.5h-2.25m2.25 0h2.25m0 0V15m0 6V9m6-6H9M9 3v6m0 0H3v-6h6Zm0 0h6m6 6v6m0 0v4.5m0-4.5h-2.25m2.25 0h2.25m0 0V15m0 6V9m-6-6h6m6 6H9m6 0v6m0 0v6m-6-6H9m6 0v6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Der Arbeitsplatz</h3>
+                        <p class="mt-3 text-lg text-gray-300">
+                            Ziel: "Neurosurveillance". Echtzeit-Überwachung von Fokus, Stress und Müdigkeit. "Billable units of attention" statt Arbeitszeit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEU: Sektion 3: Die Zwei Agenden -->
+        <section id="agenda" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-black text-center text-red-500 uppercase neon-text">Die Zwei Agenden</h2>
+                <p class="text-center text-xl text-gray-300 mt-4 max-w-2xl mx-auto">Die Technologie ist identisch. Nur die Vermarktung ändert sich. Das ist die "Dual-Use"-Lüge.</p>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Agenda 1: Die PR-Story -->
+                    <div class="agenda-card">
+                        <div class="flex items-center">
+                            <svg class="w-12 h-12 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 5.25a7.5 7.5 0 0 0 0-15 7.5 7.5 0 0 0 0 15Zm0-12.75h.008v.008H12v-.008Z" />
+                                <path d="M7.5 12h.008v.008H7.5V12Zm0 0A4.5 4.5 0 0 1 12 7.5h0a4.5 4.5 0 0 1 4.5 4.5v0A4.5 4.5 0 0 1 12 16.5h0A4.5 4.5 0 0 1 7.5 12Z" />
+                            </svg>
+                            <h3 class="ml-4 text-2xl font-bold text-blue-400">Agenda A: Die PR-Story</h3>
+                        </div>
+                        <p class="mt-4 text-lg text-gray-300">
+                            Das <span class="text-blue-300 font-semibold">"Heilversprechen"</span>. Gelähmten Autonomie zurückgeben. Blinden das Sehen ermöglichen. Das ist das moralische Alibi, der Fuß in der Tür.
+                        </p>
+                        <p class="mt-3 text-gray-400">Dieses Narrativ (z.B. der erste Neuralink-Patient) schafft die gesellschaftliche Akzeptanz und liefert den "Proof-of-Concept".</p>
+                    </div>
+
+                    <!-- Agenda 2: Das wahre Ziel -->
+                    <div class="agenda-card border-red-500">
+                        <div class="flex items-center">
+                            <svg class="w-12 h-12 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                            <h3 class="ml-4 text-2xl font-bold text-red-500">Agenda B: Das wahre Ziel</h3>
+                        </div>
+                        <p class="mt-4 text-lg text-gray-300">
+                            Die <span class="text-red-400 font-semibold">"Infrastruktur der Kontrolle"</span>. Human Enhancement für den Massenmarkt. Die Fusion von Mensch und KI.
+                        </p>
+                        <p class="mt-3 text-gray-400">Das wahre Ziel ist die Skalierung auf gesunde Nutzer. Das ist das lukrative Geschäftsmodell und die strategische Waffe (siehe Schritt 2).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sektion 4: Das Handbuch (Medien) -->
+        <section id="media" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-black text-center text-red-500 uppercase neon-text">Das Handbuch</h2>
+                <p class="text-center text-xl text-gray-300 mt-4 max-w-2xl mx-auto">Die Realität ist bereits hier. Sie wurde für Sie aufgezeichnet.</p>
+                
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-5 gap-8">
+                    <!-- Video Player -->
+                    <div class="md:col-span-3">
+                        <h3 class="text-2xl font-bold text-white mb-4">Video: Brain-Hacking für Dummies</h3>
+                        <video class="w-full h-auto rounded-lg shadow-xl" controls preload="metadata" src="Brain-Hacking_für_Dummies.mp4">
+                            Dein Browser unterstützt das Video-Tag nicht.
+                        </video>
+                    </div>
+                    <!-- Audio Player -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold text-white mb-4">Audio: Das Ende der Privatsphäre</h3>
+                        <audio class="w-full mt-12" controls preload="metadata" src="Das_Ende_der_mentalen_Privatsphäre_Brain_Hacking (1).m4a">
+                            Dein Browser unterstützt das Audio-Tag nicht.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 5: Das regulatorische Vakuum -->
+        <section id="law" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-5xl font-black text-center text-red-500 uppercase neon-text">Schritt 3: Das regulatorische Vakuum</h2>
+                <p class="text-center text-xl text-gray-300 mt-4 max-w-2xl mx-auto">Die Technik ist hier, die Kunden sind da. Aber es gibt keine Gesetze, die Sie schützen.</p>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Lücke 1: DSGVO-Schlupfloch -->
+                    <div class="card-hover bg-gray-900 border-2 border-gray-800 rounded-lg p-6">
+                        <h3 class="text-2xl font-bold text-white">Das DSGVO-Schlupfloch (Inferenz)</h3>
+                        <p class="mt-3 text-lg text-gray-300">
+                            Die DSGVO schützt Ihre <span class="text-red-400">Rohdaten</span> (das EEG-Signal).
+                        </p>
+                        <p class="mt-3 text-lg text-gray-300">
+                            Sie schützt Sie NICHT vor dem Verkauf der <span class="text-red-400">Schlussfolgerungen (Inferenz)</span>, die eine KI aus Ihren Daten zieht – Ihre politische Haltung, Ihre Kaufabsicht, Ihre sexuelle Orientierung.
+                        </p>
+                    </div>
+                    <!-- Lücke 2: Brain Hacking -->
+                    <div class="card-hover bg-gray-900 border-2 border-gray-800 rounded-lg p-6">
+                        <h3 class="text-2xl font-bold text-white">"Brain-Hacking" als Side-Channel</h3>
+                        <p class="mt-3 text-lg text-gray-300">
+                            Forscher haben mit Consumer-Headsets PINs und Bankdaten gestohlen.
+                        </p>
+                        <p class="mt-3 text-lg text-gray-300">
+                            Wie? Indem sie dem Nutzer Zahlen zeigten und die <span class="text-red-400">unbewusste "P300"-Reaktion</span> des Gehirns auf die korrekte Ziffer maßen. Sie merken den Diebstahl nicht einmal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sektion 6: Schritt 4 - Der "Widerstand" -->
+        <section id="action" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-center text-red-500 uppercase neon-text">Schritt 4: Der "Widerstand"</h2>
+                <p class="text-center text-xl text-gray-300 mt-4 max-w-2xl mx-auto">Das Vakuum ist so offensichtlich, dass verzweifelte Gegenmaßnahmen entstehen.</p>
+
+                <div class="mt-12 flex justify-center">
+                    <!-- NEUES Icon: Gebrochenes Schild -->
+                    <svg class="w-24 h-24 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.631-.46-3.167-1.282-4.522M9 12.75l-4.5-4.5m0 0H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125H9m-4.5-4.5v-1.5c0-.621.504-1.125 1.125-1.125H9m-4.5 4.5 4.5-4.5m4.5 4.5 4.5-4.5m0 0h1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125H15m4.5-4.5v-1.5c0-.621-.504-1.125-1.125-1.125H15m4.5 4.5-4.5-4.5" />
+                    </svg>
+                </div>
+
+                <h3 class="text-3xl font-bold text-white mt-8">Der Ruf nach "Neuro-Rechten"</h3>
+                <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+                    Chile hat als erstes Land der Welt seine Verfassung geändert, um "mentale Integrität" zu schützen. Ihre Forderung: <span class="text-red-400 font-bold">Gehirndaten müssen den Status eines Organs erhalten</span> – sie dürfen weder gekauft noch verkauft werden.
+                </p>
+                <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
+                    Dies ist das Eingeständnis, dass herkömmlicher Datenschutz (wie die DSGVO) für diese Bedrohung völlig unzureichend ist. Es ist die letzte Verteidigungslinie für Ihre kognitive Freiheit.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sektion 7: Fazit -->
+        <section id="fazit" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-black text-center text-white uppercase glitch" data-text="GAME OVER?">
+                    <span>Game Over?</span>
+                </h2>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mt-6 max-w-3xl mx-auto">
+                    Die Triangulation ist vollständig:
+                </p>
+
+                <div class="mt-12 text-left max-w-2xl mx-auto space-y-4 text-lg md:text-xl">
+                    <p class="flex items-start">
+                        <span class="text-red-500 mr-3 mt-1">✔</span>
+                        <span class="text-white"><span class="font-bold">DIE WAFFE</span> (Technik) ist geladen und skalierbar.</span>
+                    </p>
+                    <p class="flex items-start">
+                        <span class="text-red-500 mr-3 mt-1">✔</span>
+                        <span class="text-white"><span class="font-bold">DIE KUNDEN</span> (Akteure) haben ihre Aufträge platziert.</span>
+                    </p>
+                    <p class="flex items-start">
+                        <span class="text-red-500 mr-3 mt-1">✔</span>
+                        <span class="text-white"><span class="font-bold">DIE TÜR</span> (Gesetz) steht offen, unbewacht und unverschlossen.</span>
+                    </p>
+                </div>
+
+                <p class="text-xl md:text-2xl text-gray-300 mt-12 max-w-3xl mx-auto">
+                    Die Infrastruktur der Kontrolle ist vollendet. Der Kampf um deinen Kopf – deinen letzten privaten Raum – hat bereits begonnen.
+                </p>
+
+                <p class="text-4xl md:text-5xl font-black text-center text-red-500 uppercase neon-text mt-16 animate-pulse">
+                    WORAN DENKST DU GERADE?
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                Diese Seite wurde auf Basis der bereitgestellten Dokumente und Medien erstellt. Die Inhalte spiegeln die Hypothese der Quellen wider.
+            </E>
+            <p class="text-gray-500 text-sm mt-2">
+                © 2025 Die Infrastruktur der Kontrolle. Alle Rechte vorbehalten (falls es noch welche gibt).
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Menu Toggle ---
+            // KORRIGIERT: Null-Prüfung hinzugefügt
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- Active Nav-Link Highlighting beim Scrollen ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navHeight = document.querySelector('header').offsetHeight;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { 
+                rootMargin: `-${navHeight}px 0px 0px 0px`, // Triggerpunkt um die Höhe der Navleiste nach unten verschoben
+                threshold: 0.3 // Sektion muss zu 30% sichtbar sein
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Mobile Menü-Links schließen das Menü ---
+            if (mobileMenu) {
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
