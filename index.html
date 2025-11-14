@@ -337,14 +337,24 @@
                     <!-- Video Player -->
                     <div class="md:col-span-3">
                         <h3 class="text-2xl font-bold text-white mb-4">Video: Brain-Hacking für Dummies</h3>
-                        <video class="w-full h-auto rounded-lg shadow-xl" controls preload="metadata" src="Brain-Hacking_für_Dummies.mp4">
-                            Dein Browser unterstützt das Video-Tag nicht.
-                        </video>
+                        <!-- ERSETZT: Lokales Video durch responsiven Vimeo iFrame -->
+                        <div class="relative w-full overflow-hidden rounded-lg shadow-xl border-2 border-gray-700" style="padding-top: 75%;"> <!-- 4:3 Aspekt (300/400 = 75%) -->
+                            <iframe 
+                                src="https://player.vimeo.com/video/1136908134?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                                class="absolute top-0 left-0 w-full h-full"
+                                frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                title="Brain-Hacking_für_Dummies">
+                            </iframe>
+                        </div>
                     </div>
                     <!-- Audio Player -->
                     <div class="md:col-span-2">
                         <h3 class="text-2xl font-bold text-white mb-4">Audio: Das Ende der Privatsphäre</h3>
-                        <audio class="w-full mt-12" controls preload="metadata" src="Das_Ende_der_mentalen_Privatsphäre_Brain_Hacking (1).m4a">
+                        <!-- ERSETZT: Lokales Audio durch GitHub Raw-Link -->
+                        <audio class="w-full mt-12" controls preload="metadata" 
+                               src="https://raw.githubusercontent.com/deusexlumen/Hirn-Hack/20483e6c4a2e3f234d662ded7ed35217de874f31/Das_Ende_der_mentalen_Privatsph%C3%A4re_Brain_Hacking%20(1).mp3">
                             Dein Browser unterstützt das Audio-Tag nicht.
                         </audio>
                     </div>
